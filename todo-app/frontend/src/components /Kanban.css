@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
+  justify-self: center;
+  grid-gap: 15px;
   overflow: hidden;
   box-sizing: border-box;
   border: solid gray;

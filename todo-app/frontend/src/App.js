@@ -73,7 +73,7 @@ function App() {
       </main>
 
       <footer className="app__footer">
-        <p>Impressum</p>
+        <p>Freitagsaufgabe Gruppe 3 (Alexander, Guillermo, Linda, Robert), Stand: August, 8th 2021</p>
       </footer>
     </div>
   )
