@@ -6,9 +6,11 @@
   max-width: 500px;
   min-width: 300px;
   overflow: hidden;
-  border: solid darkblue;
+  border: solid rgba(0, 0, 139, 0.27);
   background-color: white;
   text-align: center;
+  margin: 10px;
+  border-radius: 15px;
 }
 
 .status__title {

@@ -8,7 +8,7 @@ export default function InputNewToDo(props) {
         value={props.inputText}
         onChange={props.saveInput}
       />
-      <button className="input__button" onClick={props.handleNewToDo}>create new todo</button>
+      <button className="input__button" onClick={props.onCreate}>create new todo</button>
     </div>
   )
 }

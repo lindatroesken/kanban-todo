@@ -1,6 +1,6 @@
 .input {
   display: grid;
-  grid-template-columns: 1fr  auto auto  auto 1fr;
+  grid-template-columns: 1fr  min-content;
   grid-template-rows: 1fr;
   grid-column-gap: 5px;
   border: solid gray;
@@ -8,10 +8,8 @@
 }
 
 .input__field {
-  place-self: center;
-  grid-column: 2/3;
+
 }
 .input__button {
-  place-self: center;
-  grid-column: 3/4;
+  min-width: 150px;
 }

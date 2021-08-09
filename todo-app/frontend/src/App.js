@@ -17,14 +17,13 @@ function App() {
   const [inputText, setInputText] = useState('')
 
   useEffect(() => {
-    console.log('get all to dos, initially')
     getAllToDos()
   }, [])
 
   const getAllToDos = () => {
     getRequest()
-      .then(response => setToDos(response.data))
-      .then(res => console.log('get all todos called', res))
+        .then(response => setToDos(response.data))
+        .catch(err => console.log(err))
   }
 
   const saveInput = event => {
@@ -32,23 +31,27 @@ function App() {
     setInputText(event.target.value)
   }
 
-  const handleNewToDo = event => {
+  const createNewToDo = () => {
     // send a post request to create a new todoelement, followed by a get request to get the updated data
     postRequest(inputText).then(getAllToDos)
+        .then(() => setInputText(""))
+        .catch(err => console.error(err))
   }
 
-  const handlesDelete = event => {
+  const deleteToDo = id => {
     // send a delete request followed by a get request to get the updated data
-    console.log('delete request: ', event.target.value)
-    deleteRequest(event.target.value).then(getAllToDos)
+    deleteRequest(id)
+        .then(getAllToDos)
+        .catch(err => console.error(err))
   }
 
-  const handleSetNextStatus = event => {
+  const setNextStatus = event => {
     // Send a put request to update followed by a get request to get the updated data
-    putRequest(event.target.value).then(getAllToDos)
+    putRequest(event.target.value)
+        .then(getAllToDos)
+        .catch(err => console.error(err))
   }
 
-  //console.log("toDos", toDos)
   return (
     <div className="app">
       <header className="app__header">
@@ -56,20 +59,16 @@ function App() {
       </header>
 
       <main className="app__main">
-        <div className="app__main__input">
           <InputNewToDo
-            handleNewToDo={handleNewToDo}
+            onCreate={createNewToDo}
             inputText={inputText}
             saveInput={saveInput}
           />
-        </div>
-        <div className="app__main__kanban">
           <Kanban
             toDos={toDos}
-            handleSetNextStatus={handleSetNextStatus}
-            handlesDelete={handlesDelete}
+            onChange={setNextStatus}
+            onDelete={deleteToDo}
           />
-        </div>
       </main>
 
       <footer className="app__footer">

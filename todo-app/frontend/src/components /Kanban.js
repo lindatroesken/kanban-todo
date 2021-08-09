@@ -6,20 +6,20 @@ export default function Kanban(props) {
       <StatusColumn
         status="OPEN"
         toDos={props.toDos}
-        handleSetNextStatus={props.handleSetNextStatus}
-        handlesDelete={props.handlesDelete}
+        onChange={props.onChange}
+        onDelete={props.onDelete}
       />
       <StatusColumn
         status="IN_PROGRESS"
         toDos={props.toDos}
-        handleSetNextStatus={props.handleSetNextStatus}
-        handlesDelete={props.handlesDelete}
+        onChange={props.onChange}
+        onDelete={props.onDelete}
       />
       <StatusColumn
         status="DONE"
         toDos={props.toDos}
-        handleSetNextStatus={props.handleSetNextStatus}
-        handlesDelete={props.handlesDelete}
+        onChange={props.onChange}
+        onDelete={props.onDelete}
       />
     </div>
   )

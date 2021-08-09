@@ -27,16 +27,15 @@
   text-align: center;
 }
 
-.app__main__input {
-  border: solid orange;
-  align-items: center;
-}
-.app__main__kanban {
-  display: grid;
-  overflow: hidden;
-  border: red;
-  margin: 10px;
-  padding: 0px;
-  /*max-height: calc(100vh - (50px + 100px + 100px));*/
-}
+/*.app__main__input {*/
+/*  border: solid orange;*/
+/*  align-items: center;*/
+/*}*/
+/*.app__main__kanban {*/
+/*  display: grid;*/
+/*  overflow: hidden;*/
+/*  border: red;*/
+/*  margin: 10px;*/
+/*  padding: 0px;*/
+/*}*/
 

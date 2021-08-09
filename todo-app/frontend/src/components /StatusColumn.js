@@ -13,8 +13,8 @@ export default function StatusColumn(props) {
             <ToDo
               key={todo.id}
               todo={todo}
-              handleSetNextStatus={props.handleSetNextStatus}
-              handlesDelete={props.handlesDelete}
+              onChange={props.onChange}
+              onDelete={props.onDelete}
             />
           )
         })}
