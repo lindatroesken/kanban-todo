@@ -10,6 +10,8 @@ import {
   putRequest,
 } from './services/RequestServices'
 
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
+
 function App() {
   const title = 'Kanban Board'
 
@@ -53,28 +55,40 @@ function App() {
   }
 
   return (
+      <Router>
     <div className="app">
+
       <header className="app__header">
         <Header title={title} />
       </header>
-
-      <main className="app__main">
-          <InputNewToDo
-            onCreate={createNewToDo}
-            inputText={inputText}
-            saveInput={saveInput}
-          />
-          <Kanban
-            toDos={toDos}
-            onChange={setNextStatus}
-            onDelete={deleteToDo}
-          />
-      </main>
-
+      <Switch>
+        <Route exact path="/">
+              <main className="app__main">
+                  <InputNewToDo
+                    onCreate={createNewToDo}
+                    inputText={inputText}
+                    saveInput={saveInput}
+                  />
+                  <Kanban
+                    toDos={toDos}
+                    onChange={setNextStatus}
+                    onDelete={deleteToDo}
+                  />
+              </main>
+        </Route>
+        <Route path="/details">
+          <h1>Details</h1>
+        </Route>
+        <Route path="/">
+          <Redirect path="/"></Redirect>
+        </Route>
+      </Switch>
       <footer className="app__footer">
         <p>Freitagsaufgabe Gruppe 3 (Alexander, Guillermo, Linda, Robert), Stand: August, 8th 2021</p>
       </footer>
+
     </div>
+      </Router>
   )
 }
 
