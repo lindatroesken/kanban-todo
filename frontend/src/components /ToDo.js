@@ -1,5 +1,5 @@
-import './ToDo.css'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
 
 ToDo.propTypes = {
     todo: PropTypes.object.isRequired,
@@ -9,18 +9,41 @@ ToDo.propTypes = {
 
 export default function ToDo({todo, onChange, onDelete}) {
   return (
-    <div className="todo">
-      <p className="todo__description">{todo.description}</p>
+    <Wrapper>
+        <DescriptionStyle>{todo.description}</DescriptionStyle>
       {todo.status !== 'DONE' && (
-        <button className="todo__button" onClick={onChange} value={todo.id}>
+        <BtnComp next onClick={onChange} value={todo.id}>
           NEXT
-        </button>
+        </BtnComp>
       )}
       {todo.status === 'DONE' && (
-        <button className="todo__button" onClick={() => onDelete(todo.id)} value={todo.id}>
+        <BtnComp del onClick={() => onDelete(todo.id)} value={todo.id}>
           DELETE
-        </button>
+        </BtnComp>
       )}
-    </div>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.section`
+  border: solid purple;
+  border-radius: 8px;
+  background-color: rgba(255, 105, 180, 0.68);
+  margin: 3px;
+  padding: 2px;
+`
+const DescriptionStyle = styled.p`
+  margin: 5px;
+`
+const BtnComp = styled.button`
+  font-size: x-small;
+  color: white;
+  background-color: rgba(247, 200, 222, 0.76);
+  border-color: rebeccapurple;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 3px;
+  justify-self: flex-end;
+  ${props => (props.next ? 'color: green; border-color: green;' : '')}
+  ${props => (props.del ? 'color: red; border-color: red' : '')}
+`

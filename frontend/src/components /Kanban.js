@@ -1,6 +1,6 @@
-import './Kanban.css'
 import StatusColumn from './StatusColumn'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
 
 Kanban.propTypes = {
     toDos: PropTypes.array.isRequired,
@@ -10,7 +10,7 @@ Kanban.propTypes = {
 
 export default function Kanban({toDos, onDelete, onChange}) {
   return (
-    <div className="kanban">
+    <BoardStyle>
       <StatusColumn
         status="OPEN"
         toDos={toDos}
@@ -29,6 +29,21 @@ export default function Kanban({toDos, onDelete, onChange}) {
         onChange={onChange}
         onDelete={onDelete}
       />
-    </div>
+    </BoardStyle>
   )
 }
+
+const BoardStyle = styled.section`
+  /*display: grid;*/
+  /*grid-template-columns: 1fr 1fr 1fr;*/
+  /*grid-template-rows: 1fr;*/
+  /*justify-self: center;*/
+  grid-gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: scroll;
+  /*overflow: hidden;*/
+  box-sizing: border-box;
+  /*border: solid gray;*/
+    `
