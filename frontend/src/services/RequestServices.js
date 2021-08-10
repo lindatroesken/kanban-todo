@@ -4,6 +4,8 @@ const PATH = '/api/todo/'
 
 export const getRequest = () => axios.get(PATH)
 
+export const getToDoById = (id) => axios.get(`${PATH}${id}`).then(response => response.data)
+
 export const putRequest = id =>
   axios({
     method: 'put',

@@ -14,13 +14,7 @@
   background-color: #bdd8fb;
   align-self: center;
 }
-.app__main {
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
 
-}
 
 .app__footer {
   background-color: #bdd8fb;

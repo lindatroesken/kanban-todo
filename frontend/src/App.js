@@ -11,6 +11,8 @@ import {
 } from './services/RequestServices'
 
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import DetailsPage from "./pages/DetailsPage";
 
 function App() {
   const title = 'Kanban Board'
@@ -63,24 +65,13 @@ function App() {
       </header>
       <Switch>
         <Route exact path="/">
-              <main className="app__main">
-                  <InputNewToDo
-                    onCreate={createNewToDo}
-                    inputText={inputText}
-                    saveInput={saveInput}
-                  />
-                  <Kanban
-                    toDos={toDos}
-                    onChange={setNextStatus}
-                    onDelete={deleteToDo}
-                  />
-              </main>
+            <HomePage toDos={toDos} onChange={setNextStatus} onDelete={deleteToDo} onCreate={createNewToDo} inputText={inputText} saveInput={saveInput}/>
         </Route>
-        <Route path="/details">
-          <h1>Details</h1>
+        <Route path="/details/:id">
+          <DetailsPage/>
         </Route>
         <Route path="/">
-          <Redirect path="/"></Redirect>
+          <Redirect to="/"/>
         </Route>
       </Switch>
       <footer className="app__footer">

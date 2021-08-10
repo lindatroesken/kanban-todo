@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
+import {Link} from "react-router-dom";
 
 ToDo.propTypes = {
     todo: PropTypes.object.isRequired,
@@ -8,9 +9,12 @@ ToDo.propTypes = {
 }
 
 export default function ToDo({todo, onChange, onDelete}) {
+    const path = "/details/" + todo.id
   return (
     <Wrapper>
         <DescriptionStyle>{todo.description}</DescriptionStyle>
+        <BtnComp>
+        <Link to={path}>Details</Link></BtnComp>
       {todo.status !== 'DONE' && (
         <BtnComp next onClick={onChange} value={todo.id}>
           NEXT
@@ -44,6 +48,8 @@ const BtnComp = styled.button`
   margin: 2px;
   border-radius: 3px;
   justify-self: flex-end;
+  text-decoration: none;
   ${props => (props.next ? 'color: green; border-color: green;' : '')}
   ${props => (props.del ? 'color: red; border-color: red' : '')}
 `
+
