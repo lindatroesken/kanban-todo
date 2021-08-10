@@ -54,7 +54,7 @@ public class TodoService {
         return Optional.of(todo);
     }
 
-    private Optional<Todo> findTodo(String todoId) {
+    public Optional<Todo> findTodo(String todoId) {
         return todoRepository.find(todoId);
     }
 

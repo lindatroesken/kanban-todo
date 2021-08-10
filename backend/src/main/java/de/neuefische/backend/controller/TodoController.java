@@ -74,4 +74,20 @@ public class TodoController {
         }
         return todoDeleteOpt.get();
     }
+
+    @GetMapping("{id}")
+    public Todo getTodo(@PathVariable("id") String todoId) {
+        Optional<Todo> todoGetOpt;
+        try {
+            todoGetOpt = todoService.findTodo(todoId);
+
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
+
+        if (todoGetOpt.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return todoGetOpt.get();
+    }
 }
