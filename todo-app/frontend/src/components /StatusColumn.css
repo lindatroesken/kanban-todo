@@ -1,9 +1,9 @@
 .status {
   display: grid;
-  /*height: available;*/
+  max-height: 95%;
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr;
-  max-width: 500px;
+  max-width: 300px;
   min-width: 300px;
   overflow: hidden;
   border: solid rgba(0, 0, 139, 0.27);
@@ -11,14 +11,15 @@
   text-align: center;
   margin: 10px;
   border-radius: 15px;
+  word-wrap: break-word;
 }
 
 .status__title {
   text-shadow: #632b63 2px 1px 3px;
+  overflow: hidden;
 }
 
 .status__cards {
   overflow-y: scroll;
   scrollbar-track-color: white;
-
 }

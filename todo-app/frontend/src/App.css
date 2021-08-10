@@ -4,8 +4,10 @@
   width: 100vw;
   margin: 0px;
   display: grid;
+  grid-gap: 10px;
   grid-template-rows: 50px 1fr 40px;
   grid-template-columns: 1fr;
+  background-color: rgba(187, 227, 244, 0.31);
 }
 
 .app__header {
@@ -16,8 +18,8 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr;
-  background-color: rgba(187, 227, 244, 0.31);
+  grid-template-rows: min-content 1fr;
+
 }
 
 .app__footer {

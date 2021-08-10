@@ -3,8 +3,10 @@
   grid-template-columns: 1fr  min-content;
   grid-template-rows: 1fr;
   grid-column-gap: 5px;
-  border: solid gray;
-  padding: 5px;
+  font-size: large;
+  /*border: solid gray;*/
+  padding: 4px;
+  /*background-color: #bdd8fb;*/
 }
 
 .input__field {
