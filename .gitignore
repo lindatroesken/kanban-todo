@@ -5,7 +5,7 @@ target
 /node_modules
 /.pnp
 .pnp.js
-todo-app/frontend/node_modules
+frontend/node_modules
 
 # testing
 /coverage
