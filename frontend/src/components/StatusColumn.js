@@ -1,6 +1,7 @@
 import ToDo from './ToDo'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
+import {statusToTitle} from "../services/todo-services";
 
 StatusColumn.propTypes = {
     toDos: PropTypes.array.isRequired,
@@ -15,7 +16,7 @@ export default function StatusColumn({toDos, status, onChange, onDelete}) {
   )
   return (
     <Wrapper>
-      <ColumnTitle>{status} ({filteredToDos.length})</ColumnTitle>
+      <ColumnTitle>{statusToTitle(status)} ({filteredToDos.length})</ColumnTitle>
       <ColumnStyle>
         {filteredToDos.map(todo => {
           return (

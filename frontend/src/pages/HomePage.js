@@ -1,5 +1,5 @@
-import InputNewToDo from "../components /InputNewToDo";
-import Kanban from "../components /Kanban";
+import InputNewToDo from "../components/InputNewToDo";
+import Kanban from "../components/Kanban";
 import styled from "styled-components/macro";
 
 

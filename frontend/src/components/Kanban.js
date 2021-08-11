@@ -10,7 +10,7 @@ Kanban.propTypes = {
 
 export default function Kanban({toDos, onDelete, onChange}) {
   return (
-    <BoardStyle>
+    <Wrapper>
       <StatusColumn
         status="OPEN"
         toDos={toDos}
@@ -29,11 +29,11 @@ export default function Kanban({toDos, onDelete, onChange}) {
         onChange={onChange}
         onDelete={onDelete}
       />
-    </BoardStyle>
+    </Wrapper>
   )
 }
 
-const BoardStyle = styled.section`
+const Wrapper = styled.section`
   /*display: grid;*/
   /*grid-template-columns: 1fr 1fr 1fr;*/
   /*grid-template-rows: 1fr;*/

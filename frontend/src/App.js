@@ -1,7 +1,4 @@
-import './App.css'
-import Header from './components /Header'
-import InputNewToDo from './components /InputNewToDo'
-import Kanban from './components /Kanban'
+import Header from './components/Header'
 import { useEffect, useState } from 'react'
 import {
   deleteRequest,
@@ -13,8 +10,11 @@ import {
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import DetailsPage from "./pages/DetailsPage";
+import SingleStatusPage from "./pages/SingleStatusPage";
+import PageLayout from "./components/PageLayout";
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
   const title = 'Kanban Board'
 
   const [toDos, setToDos] = useState([])
@@ -58,15 +58,15 @@ function App() {
 
   return (
       <Router>
-    <div className="app">
-
-      <header className="app__header">
-        <Header title={title} />
-      </header>
+    <PageLayout>
+      <Header title={title} />
       <Switch>
         <Route exact path="/">
             <HomePage toDos={toDos} onChange={setNextStatus} onDelete={deleteToDo} onCreate={createNewToDo} inputText={inputText} saveInput={saveInput}/>
         </Route>
+        <Route path="/board/:slugStatus">
+            <SingleStatusPage todos={toDos} onDelete = {deleteToDo} onChange={setNextStatus}/>
+      </Route>
         <Route path="/details/:id">
           <DetailsPage/>
         </Route>
@@ -74,13 +74,11 @@ function App() {
           <Redirect to="/"/>
         </Route>
       </Switch>
-      <footer className="app__footer">
-        <p>Freitagsaufgabe Gruppe 3 (Alexander, Guillermo, Linda, Robert), Stand: August, 8th 2021</p>
-      </footer>
-
-    </div>
-      </Router>
+      <Footer/>
+    </PageLayout>
+    </Router>
   )
 }
 
-export default App
+
+
