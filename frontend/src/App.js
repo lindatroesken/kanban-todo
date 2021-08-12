@@ -14,6 +14,7 @@ import SingleStatusPage from "./pages/SingleStatusPage";
 import PageLayout from "./components/PageLayout";
 import Footer from "./components/Footer";
 import InputNewToDo from "./components/InputNewToDo";
+import EditPage from "./pages/EditPage";
 
 export default function App() {
   const title = 'Kanban Board'
@@ -73,6 +74,9 @@ export default function App() {
         <Route path="/details/:id">
           <InputNewToDo onCreate={createNewToDo} inputText={inputText} saveInput={saveInput}/>
           <DetailsPage/>
+        </Route>
+        <Route path="/edit/:id">
+          <EditPage/>
         </Route>
         <Route path="/">
           <Redirect to="/"/>
