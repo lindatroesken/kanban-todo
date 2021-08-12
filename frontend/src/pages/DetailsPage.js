@@ -1,9 +1,8 @@
 import styled from "styled-components/macro";
-import {Link, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getToDoById} from "../services/RequestServices";
 import Details from "../components/Details";
-import InputNewToDo from "../components/InputNewToDo";
 
 export default function DetailsPage () {
     const {id} = useParams();
