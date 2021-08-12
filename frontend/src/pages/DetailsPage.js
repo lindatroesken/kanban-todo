@@ -15,7 +15,6 @@ export default function DetailsPage () {
 
     return (
         <Wrapper>
-            <section/>
             <Details todo={todo} />
         </Wrapper>
     )

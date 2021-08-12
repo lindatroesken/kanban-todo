@@ -4,7 +4,7 @@ import {
   deleteRequest,
   getRequest,
   postRequest,
-  putRequest,
+  putRequest, putUpdateRequest,
 } from './services/RequestServices'
 
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
@@ -58,6 +58,10 @@ export default function App() {
         .catch(err => console.error(err))
   }
 
+  const updateToDo = todo => {
+    return putUpdateRequest(todo).then(getAllToDos).catch(err => console.error(err))
+  }
+
   return (
       <Router>
     <PageLayout>
@@ -76,7 +80,8 @@ export default function App() {
           <DetailsPage/>
         </Route>
         <Route path="/edit/:id">
-          <EditPage/>
+          <InputNewToDo onCreate={createNewToDo} inputText={inputText} saveInput={saveInput}/>
+          <EditPage onUpdate={updateToDo}/>
         </Route>
         <Route path="/">
           <Redirect to="/"/>

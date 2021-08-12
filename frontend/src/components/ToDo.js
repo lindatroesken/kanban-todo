@@ -9,12 +9,13 @@ ToDo.propTypes = {
 }
 
 export default function ToDo({todo, onChange, onDelete}) {
-    const path = "/details/" + todo.id
   return (
     <Wrapper>
         <DescriptionStyle>{todo.description}</DescriptionStyle>
         <BtnComp>
-        <Link to={path}>Details</Link></BtnComp>
+        <Link to={`/details/${todo.id}`}>Details</Link></BtnComp>
+        <BtnComp>
+        <Link to={`/edit/${todo.id}`}>Edit</Link></BtnComp>
       {todo.status !== 'DONE' && (
         <BtnComp next onClick={onChange} value={todo.id}>
           NEXT
