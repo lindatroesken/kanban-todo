@@ -1,6 +1,6 @@
 import {createGlobalStyle} from "styled-components";
 
-const globalStyle = createGlobalStyle`
+export default createGlobalStyle`
     *{
       box-sizing: border-box;
     }
@@ -12,5 +12,3 @@ const globalStyle = createGlobalStyle`
       sans-serif;
     }
     `
-
-export default globalStyle

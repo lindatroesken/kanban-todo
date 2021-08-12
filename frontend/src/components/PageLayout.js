@@ -7,7 +7,7 @@ export default styled.div`
   width: 100vw;
   display: grid;
   grid-gap: 10px;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: min-content minmax(20px, min-content) 1fr min-content;
   grid-template-columns: 1fr;
   background-color: rgba(187, 227, 244, 0.31);
     

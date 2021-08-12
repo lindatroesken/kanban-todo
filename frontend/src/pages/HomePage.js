@@ -6,11 +6,11 @@ import styled from "styled-components/macro";
 export default function HomePage({toDos, onChange, onDelete, onCreate, saveInput, inputText}) {
     return (
         <Wrapper>
-            <InputNewToDo
-                onCreate={onCreate}
-                inputText={inputText}
-                saveInput={saveInput}
-            />
+            {/*<InputNewToDo*/}
+            {/*    onCreate={onCreate}*/}
+            {/*    inputText={inputText}*/}
+            {/*    saveInput={saveInput}*/}
+            {/*/>*/}
             <Kanban
                 toDos={toDos}
                 onChange={onChange}

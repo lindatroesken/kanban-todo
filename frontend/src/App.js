@@ -13,6 +13,7 @@ import DetailsPage from "./pages/DetailsPage";
 import SingleStatusPage from "./pages/SingleStatusPage";
 import PageLayout from "./components/PageLayout";
 import Footer from "./components/Footer";
+import InputNewToDo from "./components/InputNewToDo";
 
 export default function App() {
   const title = 'Kanban Board'
@@ -62,12 +63,15 @@ export default function App() {
       <Header title={title} />
       <Switch>
         <Route exact path="/">
+          <InputNewToDo onCreate={createNewToDo} inputText={inputText} saveInput={saveInput}/>
             <HomePage toDos={toDos} onChange={setNextStatus} onDelete={deleteToDo} onCreate={createNewToDo} inputText={inputText} saveInput={saveInput}/>
         </Route>
         <Route path="/board/:slugStatus">
-            <SingleStatusPage todos={toDos} onDelete = {deleteToDo} onChange={setNextStatus}/>
+          <InputNewToDo onCreate={createNewToDo} inputText={inputText} saveInput={saveInput}/>
+          <SingleStatusPage todos={toDos} onDelete = {deleteToDo} onChange={setNextStatus}/>
       </Route>
         <Route path="/details/:id">
+          <InputNewToDo onCreate={createNewToDo} inputText={inputText} saveInput={saveInput}/>
           <DetailsPage/>
         </Route>
         <Route path="/">

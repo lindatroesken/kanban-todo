@@ -19,5 +19,14 @@ const NavigationButton = styled.section`
     `
 
 const BtnNav = styled.button`
-    margin: 5px;
+      margin: 5px;
+      text-decoration: none;
+      background-color: aqua;
+      border-radius: 5px;
+      box-shadow: black 2px 2px 3px;
+  a {
+    text-decoration: none;
+    color: hotpink; 
+  }
+      
     `

@@ -2,6 +2,8 @@ import styled from "styled-components/macro";
 import {Link, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getToDoById} from "../services/RequestServices";
+import Details from "../components/Details";
+import InputNewToDo from "../components/InputNewToDo";
 
 export default function DetailsPage () {
     const {id} = useParams();
@@ -14,10 +16,8 @@ export default function DetailsPage () {
 
     return (
         <Wrapper>
-            <h1>Details</h1>
-            <p>ID: {id}</p>
-            <p>Description: {todo.description}</p>
-            <Link to="/">Home</Link>
+            <section/>
+            <Details todo={todo} />
         </Wrapper>
     )
 }
