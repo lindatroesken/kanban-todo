@@ -13,6 +13,8 @@ export const putRequest = id =>
     data: {},
   })
 
+export const putUpdateRequest = (todo) => axios.put(`${PATH}${todo.id}/edit`, todo)
+
 export const postRequest = inputText =>
   axios
     .post(PATH, {
